@@ -20,7 +20,7 @@ def check_events():
             sys.exit()
 
 
-def updateDisplay(array, algorithmName, swap1=None, swap2=None, status="Running", sc=screen):
+def updateDisplay(array, algorithmName=None, swap1=None, swap2=None, status="Running", sc=screen):
     pygame.time.delay(delay)
     screen.fill((255, 255, 255))
     if status == "Running":
@@ -52,8 +52,9 @@ if __name__ == '__main__':
     array = generate_arr()
     # for i in array:
     #     print(i, end=" ")
-    updateDisplay(array, "Bubble Sort")
+    updateDisplay(array)
     # algorithms.bubbleSort(array,"Bubble Sort")
-    algorithms.selectionSort(array, "Selection Sort")
+    # algorithms.selectionSort(array, "Selection Sort")
+    algorithms.insertionSort(array, "Insertion Sort")
     while True:
         check_events()
